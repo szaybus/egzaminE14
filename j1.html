@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf=8">
+  <script>
+    function checkNumber() {
+      var liczba = parseInt(document.getElementById("liczba").value);
+      var wynik = "";
+      if(liczba > 0) {wynik = "Liczba jest większa od 0";}
+      else if(liczba == 0) {wynik = "Liczba jest równa 0";}
+      else {wynik = "Liczba jest mniejsza niż 0";}
+      alert(wynik);
+    }
+    function numbersBetween(){
+      var poczatkowaLiczba = parseInt(document.getElementById("pierwszaLiczba").value);
+      var koncowaLiczba = parseInt(document.getElementById("drugaLiczba").value);
+      var wynik = "";
+      for(var i=poczatkowaLiczba+1; i<koncowaLiczba; i++) {
+        wynik += i;
+        if(i < koncowaLiczba-1) wynik +=", ";
+      }
+      alert(wynik);
+    }
+    function login(){
+      var password = prompt("Podaj hasło:");
+      if(password == "haslo") {
+        alert("Hasło poprawne");
+        window.location = "j1.html";
+      }
+      else {
+        alert("Hasło niepoprawne!");
+      }
+    }
+  </script>
+</head>
+<body>
+  Podaj liczbe: <input type="text" id="liczba">
+  <input value="Sprawdz" type="button" onclick="checkNumber()">
+  <br>
+  Podaj pierwsza liczbe <input type="text" id="pierwszaLiczba"><br>
+  Podaj druga liczbe <input type="text" id="drugaLiczba"><br>
+  <input value="Pokaż liczby pomiędzy" type="button" onclick="numbersBetween()">
+  <a href="#" onclick="login()">Zaloguj do strony</a>
+</body>
+</html>
